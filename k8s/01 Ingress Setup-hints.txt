@@ -1,0 +1,17 @@
+Ingress that is used
+https://github.com/kubernetes/ingress-nginx
+
+WebSite plus deployment hints found here
+https://kubernetes.github.io/ingress-nginx/
+
+Deployment:
+https://kubernetes.github.io/ingress-nginx/deploy/
+
+Mandatory command is:
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.26.2/deploy/static/mandatory.yaml
+
+local Minikube usage:
+minikube addons enable ingress
+
+Google Cloud (GCE)
+kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.26.2/deploy/static/provider/cloud-generic.yaml
