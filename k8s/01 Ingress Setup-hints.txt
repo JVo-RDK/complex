@@ -15,3 +15,6 @@ minikube addons enable ingress
 
 Google Cloud (GCE)
 kubectl apply -f https://raw.githubusercontent.com/kubernetes/ingress-nginx/nginx-0.26.2/deploy/static/provider/cloud-generic.yaml
+
+Google Cloud cleanup hints
+https://www.udemy.com/course/docker-and-kubernetes-the-complete-guide/learn/lecture/11684242?start=0#content
