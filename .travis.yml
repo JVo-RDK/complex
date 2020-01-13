@@ -14,14 +14,16 @@ before_install:
   - gcloud components update kubectl
 #   simular to AWS IAM 
   - gcloud auth activate-service-account --key-file service-account.json
-  - gcloud config set project skilful-berm-214822
-  - gcloud config set compute/zone us-central1-a
-  - gcloud container clusters get-credentials multi-cluster
+  - gcloud config set project multi-k8s-264912
+  - gcloud config set compute/zone europe-west3-a
+  - gcloud container clusters get-credentials multi-k8s
   - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
-  - docker build -t stephengrider/react-test -f ./client/Dockerfile.dev ./client
+# Dockerfile.dev wird genommen aus dem /client dir of the complex project we are working on  
+  - docker build -t th3v055i/react-test -f ./client/Dockerfile.dev ./client
 
+# just a reference for Testing ... 
 script:
-  - docker run stephengrider/react-test npm test -- --coverage
+  - docker run -e CI=true th3v055i/react-test npm test
 
 deploy:
   provider: script
