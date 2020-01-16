@@ -1,21 +1,21 @@
 apiVersion: certmanager.k8s.io/v1alpha1
 kind: Certificate
 metadata:
-  name: k8s-multi-com-tls
+  name: kubernetes-vossmann-de-tls
 spec:
-  secretName: k8s-multi-com
+  secretName: kubernetes-vossmann-de
   issuerRef:
     name: letsencrypt-prod
     kind: ClusterIssuer
-  commonName: k8s-multi.com
+  commonName: kubernetes.vossmann.de
   dnsNames:
-    - k8s-multi.com
-    - www.k8s-multi.com
+    - kubernetes.vossmann.de
+#    - www.kubernetes.vossmann.de
   acme:
     config:
       - http01:
           ingressClass: nginx
         domains:
-          - k8s-multi.com
-          - www.k8s-multi.com
+          - kubernetes.vossmann.de
+#          - www.kubernetes.vossmann.de
           
